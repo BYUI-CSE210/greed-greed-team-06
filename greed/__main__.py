@@ -64,7 +64,7 @@ def main():
         b = random.randint(0, 255)
         color = Color(r, g, b)
         
-        gem=Actor()
+        gem=FallingObject()
         gem.set_text('*')
         gem.set_font_size(FONT_SIZE)
         gem.set_color(color)
@@ -81,14 +81,14 @@ def main():
     
         color = Color(220,220,220)
     
-        rock=Actor()
+        rock=FallingObject()
         rock.set_text('0')
         rock.set_font_size(FONT_SIZE)
         rock.set_color(color)
         rock.set_position(position)
         cast.add_actor("falling_objects", rock)
 
-    '''THESE NEED TO BE SET TO THE GEM ACTORS
+    '''THESE NEED TO BE SET TO THE GEM ACTORS --Chris
         #create random gem_rock color ()
         r = random.randint(0, 255)
         g = random.randint(0, 255)
