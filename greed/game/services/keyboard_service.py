@@ -37,11 +37,17 @@ class KeyboardService:
         
         if pyray.is_key_down(pyray.KEY_UP):
             pass
+<<<<<<< HEAD
             
         
         if pyray.is_key_down(pyray.KEY_DOWN):
             pass
             
+=======
+        
+        if pyray.is_key_down(pyray.KEY_DOWN):
+            pass
+>>>>>>> fb767d8e9f8fc0598bb51245e5017db96041083b
 
         direction = Point(dx, dy)
         direction = direction.scale(self._cell_size)

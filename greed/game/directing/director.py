@@ -14,10 +14,16 @@ class Director:
         Args:
             keyboard_service (KeyboardService): An instance of KeyboardService.
             video_service (VideoService): An instance of VideoService.
+            score: the player's score
         """
         self._keyboard_service = keyboard_service
         self._video_service = video_service
+<<<<<<< HEAD
         
+=======
+        self._score = 0
+
+>>>>>>> fb767d8e9f8fc0598bb51245e5017db96041083b
     def start_game(self, cast):
         """Starts the game using the given cast. Runs the main game loop.
 
@@ -32,6 +38,7 @@ class Director:
         self._video_service.close_window()
 
     def _get_inputs(self, cast):
+<<<<<<< HEAD
         """Gets directional input from the keyboard and applies it to the robot.
         
         Args:
@@ -40,6 +47,16 @@ class Director:
         player = cast.get_first_actor("player")
         velocity = self._keyboard_service.get_direction()
         player.set_velocity(velocity)        
+=======
+        """Gets directional input from the keyboard and applies it to the player.
+
+        Args:
+            cast (Cast): The cast of actors.
+        """
+        player= cast.get_first_actor("player")
+        velocity = self._keyboard_service.get_direction()
+        player.set_velocity(velocity)
+>>>>>>> fb767d8e9f8fc0598bb51245e5017db96041083b
 
     def _do_updates(self, cast):
         """Updates the robot's position and resolves any collisions with artifacts.
@@ -49,7 +66,30 @@ class Director:
         """
         banner = cast.get_first_actor("banners")
         player = cast.get_first_actor("player")
+<<<<<<< HEAD
         artifacts = cast.get_actors("artifacts")
+=======
+
+        falling_objects = cast.get_actors("falling_objects")
+        
+
+
+        banner.set_text(f"Score: {self._score}")
+        max_x = self._video_service.get_width()
+        max_y = self._video_service.get_height()
+        player.move_next(max_x, max_y)
+        
+        for object in falling_objects:
+            if player.get_position().equals(object.get_position()):
+                if object.text == "rock":
+                    self._score -= 1
+                else:
+                    self._score += 1
+
+        for object in falling_objects:
+            object.fall()
+
+>>>>>>> fb767d8e9f8fc0598bb51245e5017db96041083b
 
         banner.set_text("")
         max_x = self._video_service.get_width()
