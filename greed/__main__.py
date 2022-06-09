@@ -20,8 +20,10 @@ CELL_SIZE = 15
 FONT_SIZE = 15
 COLS = 60
 ROWS = 40
-CAPTION = "Change this text"
+CAPTION = "Greed"
 WHITE = Color(255, 255, 255)
+DEFAULT_GEMS = 20
+DEFAULT_ROCKS = 20
 
 
 def main():
@@ -36,6 +38,55 @@ def main():
     banner.set_color(WHITE)
     banner.set_position(Point(CELL_SIZE, 0))
     cast.add_actor("banners", banner)
+
+    #create  player
+    x = int(MAX_X/ 2)
+    y = int(MAX_Y -20)
+    position = Point(x, y)
+
+    player=Actor()
+    player.set_text('#')
+    player.set_font_size(FONT_SIZE)
+    player.set_color(WHITE)
+    player.set_position(position)
+    cast.add_actor("player", player)
+
+    #create Gems
+    for n in range(DEFAULT_GEMS):
+        x=random.randint(1, COLS-1)
+        y=random.randint(1, ROWS -1)
+        position = Point(x,y)
+        position = position.scale(CELL_SIZE)
+        
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        color = Color(r, g, b)
+        
+        gem=Actor()
+        gem.set_text('*')
+        gem.set_font_size(FONT_SIZE)
+        gem.set_color(color)
+        gem.set_position(position)
+        cast.add_actor("falling_objects", gem)
+
+
+    #create Rocks
+    for n in range(DEFAULT_ROCKS):
+        x=random.randint(1, COLS-1)
+        y=random.randint(1, ROWS -1)
+        position = Point(x,y)
+        position = position.scale(CELL_SIZE)
+    
+        color = Color(220,220,220)
+    
+        rock=Actor()
+        rock.set_text('0')
+        rock.set_font_size(FONT_SIZE)
+        rock.set_color(color)
+        rock.set_position(position)
+        cast.add_actor("falling_objects", rock)
+
 
     # start the game
     keyboard_service = KeyboardService(CELL_SIZE)
