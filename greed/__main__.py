@@ -88,16 +88,16 @@ def main():
         rock.set_position(position)
         cast.add_actor("falling_objects", rock)
 
-'''THESE NEED TO BE SET TO THE GEM ACTORS
-    #create random gem_rock color ()
-    r = random.randint(0, 255)
-    g = random.randint(0, 255)
-    b = random.randint(0, 255)
-    color = Color(r, g, b)
+    '''THESE NEED TO BE SET TO THE GEM ACTORS
+        #create random gem_rock color ()
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        color = Color(r, g, b)
 
-    #set volocity
-    velocity = Point(0, 1)
-    THESE NEED TO BE SET TO THE GEM ACTORS'''
+        #set volocity
+        velocity = Point(0, 1)
+        THESE NEED TO BE SET TO THE GEM ACTORS'''
 
     # start the game
     keyboard_service = KeyboardService(CELL_SIZE)
