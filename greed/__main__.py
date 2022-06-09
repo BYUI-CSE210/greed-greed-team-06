@@ -22,18 +22,16 @@ CELL_SIZE = 15
 FONT_SIZE = 15
 COLS = 60
 ROWS = 40
-<<<<<<< HEAD
-CAPTION = "Robot Finds Kitten"
+CAPTION = "Greed"
 DATA_PATH = os.path.dirname(os.path.abspath(__file__)) + "/data/messages.txt"
 WHITE = Color(255, 255, 255)
 DEFAULT_ROCKS = 20
 DEFAULT_GEMS = 20
-=======
+
 CAPTION = "Greed"
 WHITE = Color(255, 255, 255)
 DEFAULT_GEMS = 20
 DEFAULT_ROCKS = 20
->>>>>>> fb767d8e9f8fc0598bb51245e5017db96041083b
 
 
 def main():
@@ -54,10 +52,9 @@ def main():
     y = int(MAX_Y - 20)
     position = Point(x, y)
 
-<<<<<<< HEAD
     player = Actor()
     player.set_text("#")
-=======
+
     #create  player
     x = int(MAX_X/ 2)
     y = int(MAX_Y -20)
@@ -65,12 +62,11 @@ def main():
 
     player=Actor()
     player.set_text('#')
->>>>>>> fb767d8e9f8fc0598bb51245e5017db96041083b
     player.set_font_size(FONT_SIZE)
     player.set_color(WHITE)
     player.set_position(position)
     cast.add_actor("player", player)
-<<<<<<< HEAD
+
     
     # create the falling gem
 
@@ -113,7 +109,7 @@ def main():
 
 
     
-=======
+
 
     #create Gems
     for n in range(DEFAULT_GEMS):
@@ -127,12 +123,12 @@ def main():
         b = random.randint(0, 255)
         color = Color(r, g, b)
         
-        gem=Actor()
-        gem.set_text('*')
-        gem.set_font_size(FONT_SIZE)
-        gem.set_color(color)
-        gem.set_position(position)
-        cast.add_actor("falling_objects", gem)
+    gem=Actor()
+    gem.set_text('*')
+    gem.set_font_size(FONT_SIZE)
+    gem.set_color(color)
+    gem.set_position(position)
+    cast.add_actor("falling_objects", gem)
 
 
     #create Rocks
@@ -151,18 +147,8 @@ def main():
         rock.set_position(position)
         cast.add_actor("falling_objects", rock)
 
-'''THESE NEED TO BE SET TO THE GEM ACTORS
-    #create random gem_rock color ()
-    r = random.randint(0, 255)
-    g = random.randint(0, 255)
-    b = random.randint(0, 255)
-    color = Color(r, g, b)
 
-    #set volocity
-    velocity = Point(0, 1)
-    THESE NEED TO BE SET TO THE GEM ACTORS'''
 
->>>>>>> fb767d8e9f8fc0598bb51245e5017db96041083b
     # start the game
     keyboard_service = KeyboardService(CELL_SIZE)
     video_service = VideoService(CAPTION, MAX_X, MAX_Y, CELL_SIZE, FRAME_RATE)
@@ -170,5 +156,5 @@ def main():
     director.start_game(cast)
 
 
-if __name__ == "__main__":
-    main()
+    if __name__ == "__main__":
+        main()
