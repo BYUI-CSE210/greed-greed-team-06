@@ -37,6 +37,17 @@ def main():
     banner.set_position(Point(CELL_SIZE, 0))
     cast.add_actor("banners", banner)
 
+'''THESE NEED TO BE SET TO THE GEM ACTORS
+    #create random gem_rock color ()
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    color = Color(r, g, b)
+
+    #set volocity
+    velocity = Point(0, 1)
+THESE NEED TO BE SET TO THE GEM ACTORS'''
+
     # start the game
     keyboard_service = KeyboardService(CELL_SIZE)
     video_service = VideoService(
