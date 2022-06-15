@@ -1,5 +1,8 @@
 """Modified by Camden"""
 
+from pyray import gen_mesh_binormals
+
+
 class Director:
     """A person who directs the game. 
     
@@ -70,8 +73,10 @@ class Director:
             if player.get_position().equals(object.get_position()):
                 if object.get_text() == "0":
                     self._score -= 1
+                    cast.remove_actor('falling_objects', object)
                 else:
                     self._score += 1
+                    cast.remove_actor('falling_objects', object)
 
         
         
